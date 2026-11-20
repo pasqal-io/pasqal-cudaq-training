@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cudaq-pasqal"
+version = "0.1.0"
+description = "CUDA-Q analog examples from GPU emulation to Pasqal QPUs"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+dependencies = ["numpy>=1.24", "matplotlib>=3.8", "ipywidgets>=8", "ipykernel>=6"]
+
+[project.optional-dependencies]
+gpu-cu12 = ["cuda-quantum-cu12==0.17.0", "cupy-cuda12x"]
+gpu-cu13 = ["cuda-quantum-cu13==0.17.0", "cupy-cuda13x"]
+notebook = ["jupyterlab>=4"]
+test = ["scipy"]
+
+[tool.setuptools]
+packages = ["cudaq_pasqal"]
